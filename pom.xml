@@ -32,6 +32,25 @@
             <version>5.0.1</version>
         </dependency>
         
+        <!-- common dbcp-->
+        <dependency>
+            <groupId>commons-dbcp</groupId>
+            <artifactId>commons-dbcp</artifactId>
+            <version>1.4</version>
+        </dependency>
+        
+        <!-- Spring Security -->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-web</artifactId>
+            <version>${org.springframework-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-config</artifactId>
+            <version>${org.springframework-version}</version>
+        </dependency>
+        
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
