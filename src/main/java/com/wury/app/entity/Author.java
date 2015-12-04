@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package com.wury.app.entity;
 
 import java.io.Serializable;
@@ -13,8 +12,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -36,6 +37,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Author.findByUsername", query = "SELECT a FROM Author a WHERE a.username = :username"),
     @NamedQuery(name = "Author.findByPassword", query = "SELECT a FROM Author a WHERE a.password = :password")})
 public class Author implements Serializable {
+
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -68,6 +70,10 @@ public class Author implements Serializable {
     @Size(min = 1, max = 50)
     @Column(name = "password")
     private String password;
+
+    @OneToOne
+    @JoinColumn(name = "role_id")
+    private Role role;
 
     public Author() {
     }
@@ -133,6 +139,14 @@ public class Author implements Serializable {
         this.password = password;
     }
 
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
+    }
+
     @Override
     public int hashCode() {
         int hash = 0;
@@ -157,5 +171,5 @@ public class Author implements Serializable {
     public String toString() {
         return "com.wury.app.entity.Author[ id=" + id + " ]";
     }
-    
+
 }
