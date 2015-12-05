@@ -1,3 +1,4 @@
+<%@include file="includes.jsp" %>
 <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -15,16 +16,16 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="index.html">Home</a>
+                    <a href="<spring:url value="home"/>">Home</a>
                 </li>
                 <li>
-                    <a href="about.html">About</a>
+                    <a href="<spring:url value="register"/>">Register</a>
                 </li>
                 <li>
-                    <a href="post.html">Sample Post</a>
+                    <a href="<spring:url value="login"/>">Login</a>
                 </li>
                 <li>
-                    <a href="contact.html">Contact</a>
+                    <a href="<spring:url value="about"/>">About</a>
                 </li>
             </ul>
         </div>
