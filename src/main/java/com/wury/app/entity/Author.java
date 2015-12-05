@@ -31,6 +31,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @NamedQueries({
     @NamedQuery(name = "Author.findAll", query = "SELECT a FROM Author a"),
     @NamedQuery(name = "Author.findById", query = "SELECT a FROM Author a WHERE a.id = :id"),
+    @NamedQuery(name = "Author.findByEnabled", query = "SELECT a FROM Author a WHERE a.enabled = :enabled"),
     @NamedQuery(name = "Author.findByNamaAuthor", query = "SELECT a FROM Author a WHERE a.namaAuthor = :namaAuthor"),
     @NamedQuery(name = "Author.findByEmail", query = "SELECT a FROM Author a WHERE a.email = :email"),
     @NamedQuery(name = "Author.findByWebSite", query = "SELECT a FROM Author a WHERE a.webSite = :webSite"),
@@ -44,6 +45,10 @@ public class Author implements Serializable {
     @Basic(optional = false)
     @Column(name = "id")
     private Integer id;
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "enabled")
+    private boolean enabled;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 50)
@@ -82,8 +87,9 @@ public class Author implements Serializable {
         this.id = id;
     }
 
-    public Author(Integer id, String namaAuthor, String email, String webSite, String username, String password) {
+    public Author(Integer id, boolean enabled, String namaAuthor, String email, String webSite, String username, String password) {
         this.id = id;
+        this.enabled = enabled;
         this.namaAuthor = namaAuthor;
         this.email = email;
         this.webSite = webSite;
@@ -97,6 +103,14 @@ public class Author implements Serializable {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+    
+    public boolean getEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
     }
 
     public String getNamaAuthor() {
@@ -145,26 +159,6 @@ public class Author implements Serializable {
 
     public void setRole(Role role) {
         this.role = role;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Author)) {
-            return false;
-        }
-        Author other = (Author) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
-            return false;
-        }
-        return true;
     }
 
     @Override
