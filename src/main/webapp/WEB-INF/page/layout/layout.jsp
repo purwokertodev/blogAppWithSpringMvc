@@ -51,6 +51,9 @@
         <tiles:insertAttribute name="footer"/>
         <!-- End Footer-->
 
+        <!-- Login Modal-->
+        <%@include file="../all_user/login_modal.jsp" %>
+        
         <!-- js includes -->
         <%@include file="js_includes.jsp" %>
 

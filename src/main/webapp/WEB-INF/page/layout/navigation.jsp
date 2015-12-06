@@ -22,7 +22,7 @@
                     <a href="<spring:url value="register"/>">Register</a>
                 </li>
                 <li>
-                    <a href="<spring:url value="login"/>">Login</a>
+                    <a href="javascript:;" data-toggle="modal" data-target="#loginModal"/>">Login</a>
                 </li>
                 <li>
                     <a href="<spring:url value="about"/>">About</a>
