@@ -25,7 +25,7 @@
 				SELECT A.username, B.role_name 
 				FROM author A JOIN role_author B ON 
 				A.role_id = B.id 
-				WHERE user.username = ?"
+				WHERE A.username = ?"
 
 				users-by-username-query="SELECT username, password, enabled FROM author WHERE username = ?" />
 		</authentication-provider>

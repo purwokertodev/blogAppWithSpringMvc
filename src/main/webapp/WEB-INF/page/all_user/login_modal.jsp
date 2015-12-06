@@ -22,22 +22,22 @@
                                 &nbsp;&nbsp;
                                 <span id="login_fail" class="response_error" style="display: none;">Loggin failed, please try again.</span>
                                 <div class="clearfix"></div>
-                                <form>
+                                <form action="j_spring_security_check" method="post">
                                     <div class="form-group">
                                         <div class="input-group">
                                             <div class="input-group-addon"><i class="fa fa-user"></i></div>
-                                            <input type="text" class="form-control" id="login_username" placeholder="Username">
+                                            <input type="text" class="form-control" id="login_username" name="j_username" placeholder="Username">
                                         </div>
                                         <span class="help-block has-error" id="email-error"></span>
                                     </div>
                                     <div class="form-group">
                                         <div class="input-group">
                                             <div class="input-group-addon"><i class="fa fa-lock"></i></div>
-                                            <input type="password" class="form-control" id="password" placeholder="Password">
+                                            <input type="password" class="form-control" id="password" name="j_password" placeholder="Password">
                                         </div>
                                         <span class="help-block has-error" id="password-error"></span>
                                     </div>
-                                    <button type="button" id="login_btn" class="btn btn-block bt-login" data-loading-text="Signing In....">Login</button>
+                                    <button type="submit" id="login_btn" class="btn btn-block bt-login" data-loading-text="Signing In....">Login</button>
                                     <div class="clearfix"></div>
                                     <div class="login-modal-footer">
                                         <div class="row">
@@ -63,7 +63,21 @@
                                     <div class="form-group">
                                         <div class="input-group">
                                             <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                                            <input type="text" class="form-control" placeholder="Full name">
+                                        </div>
+                                        <span class="help-block has-error" data-error='0' id="username-error"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="input-group-addon"><i class="fa fa-user"></i></div>
                                             <input type="text" class="form-control" id="username" placeholder="Username">
+                                        </div>
+                                        <span class="help-block has-error" data-error='0' id="username-error"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="input-group-addon"><i class="fa fa-lock"></i></div>
+                                            <input type="text" class="form-control" placeholder="Password">
                                         </div>
                                         <span class="help-block has-error" data-error='0' id="username-error"></span>
                                     </div>
@@ -73,6 +87,13 @@
                                             <input type="text" class="form-control" id="remail" placeholder="Email">
                                         </div>
                                         <span class="help-block has-error" data-error='0' id="remail-error"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="input-group-addon"><i class="fa fa-at"></i></div>
+                                            <input type="text" class="form-control"  placeholder="Website">
+                                        </div>
+                                        <span class="help-block has-error" data-error='0' id="username-error"></span>
                                     </div>
                                     <button type="button" id="register_btn" class="btn btn-block bt-login" data-loading-text="Registering....">Register</button>
                                     <div class="clearfix"></div>
