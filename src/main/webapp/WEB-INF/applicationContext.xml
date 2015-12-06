@@ -20,12 +20,12 @@
 	<!-- Activates annotation based transaction management -->
 	<tx:annotation-driven transaction-manager="transactionManager" />
 	
-	<import resource="security.xml"/>
+	<import resource="spring/security.xml"/>
         
-        <import resource="spring-tiles.xml"/>
+        <import resource="spring/spring-tiles.xml"/>
 
 	<beans profile="dev">
-		<import resource="database.xml"/>
+		<import resource="spring/database.xml"/>
 	</beans>	
 	
 <!--	<beans profile="prod">

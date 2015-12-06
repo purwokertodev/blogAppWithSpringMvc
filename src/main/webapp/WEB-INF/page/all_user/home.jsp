@@ -1,6 +1,5 @@
-<%@include file="../../page/layout/includes.jsp" %>
-<%@taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
 
+<%@taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
 <tiles:insertDefinition name="main-layout">
     <tiles:putAttribute name="body">
 

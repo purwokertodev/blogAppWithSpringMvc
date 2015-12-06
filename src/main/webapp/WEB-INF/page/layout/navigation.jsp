@@ -9,7 +9,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.html">Start Bootstrap</a>
+            <a class="navbar-brand" href="home">Spring Bootstrap</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -17,9 +17,6 @@
             <ul class="nav navbar-nav navbar-right">
                 <li>
                     <a href="<spring:url value="home"/>">Home</a>
-                </li>
-                <li>
-                    <a href="<spring:url value="register"/>">Register</a>
                 </li>
                 <li>
                     <a href="javascript:;" data-toggle="modal" data-target="#loginModal"/>Login</a>
