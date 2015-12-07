@@ -9,7 +9,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="home">Spring Bootstrap</a>
+            <a class="navbar-brand" href="home">Spring Bootstrap | <security:authentication property="name"/></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -18,6 +18,20 @@
                 <li>
                     <a href="<spring:url value="home"/>">Home</a>
                 </li>
+                <security:authorize access="hasRole('ROLE_AUTHOR')">
+                    <li>
+                        <a href="<spring:url value="author/my-posts"/>">My Posts</a>
+                    </li>
+                    <li>
+                        <a href="<spring:url value="author/create-new-post"/>">New Post</a>
+                    </li>
+                    <li>
+                        <a href="<spring:url value="author/my-profil"/>">My Profil</a>
+                    </li>
+                    <li>
+                        <a href="<spring:url value="author/logout"/>">Logout</a>
+                    </li>
+                </security:authorize>
                 <li>
                     <a href="javascript:;" data-toggle="modal" data-target="#loginModal"/>Login</a>
                 </li>

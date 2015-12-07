@@ -44,6 +44,12 @@ public class PageController {
         return mav;
     }
     
+    @RequestMapping(value = "/about")
+    public ModelAndView about(){
+        ModelAndView mav = new ModelAndView("all_user/about");
+        return mav;
+    }
+    
     @ModelAttribute("newAuthor")
     public Author getAuthor(){
         return new Author();
